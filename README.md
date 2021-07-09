@@ -116,8 +116,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a stateful and a functional component?
 
+stateful component is reusable and dynamic component that can be used serveral times.
+
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
+
+componentWillMount function is called right before the mounting starts.
 
 3. Define stateful logic.
 
+stateful logic is a code that uses useState or this.state to store data and keep 
+track of the data through out the code for dynamic and reusuable code.
+
 4. What are the three step of creating a successful test? What is done in each phase?
+
+Arrange: renders the app or code to the DOM
+Act: we use query,find,get to search different types elements or data in the code
+Assert: it helps to print out the last info using expect
