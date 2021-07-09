@@ -13,18 +13,27 @@ test("form header renders", () => {
 
 test("form shows success message on submit with form details", () => {
     render(<CheckoutForm/>)
-    const first_name = screen.queryByLabelText(/first name/i)
-    const last_name = screen.queryByLabelText(/last name/i)
+    const first_name = screen.queryByLabelText(/first name:/i)
+    const last_name = screen.queryByLabelText(/last name:/i)
+    const address = screen.queryByLabelText(/address:/i)
+    const city = screen.queryByLabelText(/city:/i)
+    const state = screen.queryByLabelText(/state:/i)
+    const zip = screen.queryByLabelText(/zip:/i)
     const button = screen.getByRole('button', {name: /checkout/i})
 
     userEvent.type(first_name, 'sirak')
     userEvent.type(last_name, 'hailemichael')
+    userEvent.type(address, '600 william st')
+    userEvent.type(city, 'oakland')
+    userEvent.type(state, 'california')
+    userEvent.type(zip, '94612')
     userEvent.click(button);
 
-    const success = await screen.findByTestId(/successMessage/i)
-    const successName = await screen.findByTestId(/successMessage/i)
+    
 
-    expect(success).toBeInTheDocument();
-    expect(successName).toBeInTheDocument();
     expect(first_name).toHaveTextContent('sirak')
+    expect(last_name).toHaveTextContent('hailemichael')
+    expect(address).toHaveTextContent('600 william st')
+    expect(city).toHaveTextContent('oakland')
+    expect(zip).toHaveTextContent('94612')
 });

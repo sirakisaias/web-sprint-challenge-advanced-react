@@ -116,7 +116,8 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a stateful and a functional component?
 
-stateful component is reusable and dynamic component that can be used serveral times.
+stateful component is reusable and dynamic component that can be used serveral times. 
+on the other hand functional component is a stateless function that doesnt remember state.
 
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
 
